@@ -1,18 +1,18 @@
 import React, { useState } from 'react';
 import { 
-  Star, 
-  TrendingUp, 
-  Users, 
-  DollarSign, 
-  ExternalLink, 
-  Heart,
-  Filter,
-  Search,
-  ArrowRight,
-  Sparkles,
-  Target,
-  Zap
-} from 'lucide-react';
+  FiStar, 
+  FiTrendingUp, 
+  FiUsers, 
+  FiDollarSign, 
+  FiExternalLink, 
+  FiHeart,
+  FiFilter,
+  FiSearch,
+  FiArrowRight,
+  FiTarget,
+  FiZap
+} from 'react-icons/fi';
+import { IoSparkles } from 'react-icons/io5';
 
 interface UserProfile {
   intent: string;
@@ -183,7 +183,7 @@ const PersonalizedDashboard: React.FC<PersonalizedDashboardProps> = ({ userProfi
               onClick={onExploreMore}
               className="flex items-center px-6 py-3 bg-gradient-to-r from-purple-500 to-blue-500 text-white rounded-xl hover:from-purple-600 hover:to-blue-600 transition-all shadow-lg hover:shadow-xl"
             >
-              <Sparkles className="w-5 h-5 mr-2" />
+              <IoSparkles className="w-5 h-5 mr-2" />
               Explore Full Map
             </button>
           </div>
@@ -192,7 +192,7 @@ const PersonalizedDashboard: React.FC<PersonalizedDashboardProps> = ({ userProfi
           <div className="grid grid-cols-1 md:grid-cols-4 gap-4 mb-6">
             <div className="bg-white rounded-xl p-4 shadow-sm">
               <div className="flex items-center">
-                <Target className="w-8 h-8 text-purple-500 mr-3" />
+                <FiTarget className="w-8 h-8 text-purple-500 mr-3" />
                 <div>
                   <p className="text-2xl font-bold text-gray-800">{personalizedTools.length}</p>
                   <p className="text-sm text-gray-600">Matched Tools</p>
@@ -201,7 +201,7 @@ const PersonalizedDashboard: React.FC<PersonalizedDashboardProps> = ({ userProfi
             </div>
             <div className="bg-white rounded-xl p-4 shadow-sm">
               <div className="flex items-center">
-                <Star className="w-8 h-8 text-yellow-500 mr-3" />
+                <FiStar className="w-8 h-8 text-yellow-500 mr-3" />
                 <div>
                   <p className="text-2xl font-bold text-gray-800">{bookmarkedTools.length}</p>
                   <p className="text-sm text-gray-600">Bookmarked</p>
@@ -210,7 +210,7 @@ const PersonalizedDashboard: React.FC<PersonalizedDashboardProps> = ({ userProfi
             </div>
             <div className="bg-white rounded-xl p-4 shadow-sm">
               <div className="flex items-center">
-                <TrendingUp className="w-8 h-8 text-green-500 mr-3" />
+                <FiTrendingUp className="w-8 h-8 text-green-500 mr-3" />
                 <div>
                   <p className="text-2xl font-bold text-gray-800">
                     {Math.round(personalizedTools.reduce((acc, tool) => acc + tool.matchScore, 0) / personalizedTools.length)}%
@@ -221,7 +221,7 @@ const PersonalizedDashboard: React.FC<PersonalizedDashboardProps> = ({ userProfi
             </div>
             <div className="bg-white rounded-xl p-4 shadow-sm">
               <div className="flex items-center">
-                <Zap className="w-8 h-8 text-blue-500 mr-3" />
+                <FiZap className="w-8 h-8 text-blue-500 mr-3" />
                 <div>
                   <p className="text-2xl font-bold text-gray-800">
                     {categories.length - 1}
@@ -235,7 +235,7 @@ const PersonalizedDashboard: React.FC<PersonalizedDashboardProps> = ({ userProfi
           {/* Search and Filter */}
           <div className="flex flex-col md:flex-row gap-4 mb-6">
             <div className="relative flex-1">
-              <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400 w-5 h-5" />
+              <FiSearch className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400 w-5 h-5" />
               <input
                 type="text"
                 placeholder="Search tools..."
@@ -245,7 +245,7 @@ const PersonalizedDashboard: React.FC<PersonalizedDashboardProps> = ({ userProfi
               />
             </div>
             <div className="flex items-center gap-2">
-              <Filter className="w-5 h-5 text-gray-400" />
+              <FiFilter className="w-5 h-5 text-gray-400" />
               <select
                 value={selectedCategory}
                 onChange={(e) => setSelectedCategory(e.target.value)}
@@ -279,7 +279,7 @@ const PersonalizedDashboard: React.FC<PersonalizedDashboardProps> = ({ userProfi
                     <div className="flex items-center mb-2">
                       <div className="flex items-center mr-4">
                         {[...Array(5)].map((_, i) => (
-                          <Star
+                          <FiStar
                             key={i}
                             className={`w-4 h-4 ${
                               i < Math.floor(tool.rating) 
@@ -300,7 +300,7 @@ const PersonalizedDashboard: React.FC<PersonalizedDashboardProps> = ({ userProfi
                         : 'text-gray-400 hover:text-red-500 hover:bg-red-50'
                     }`}
                   >
-                    <Heart className={`w-5 h-5 ${tool.isBookmarked ? 'fill-current' : ''}`} />
+                    <FiHeart className={`w-5 h-5 ${tool.isBookmarked ? 'fill-current' : ''}`} />
                   </button>
                 </div>
 
@@ -317,17 +317,17 @@ const PersonalizedDashboard: React.FC<PersonalizedDashboardProps> = ({ userProfi
                 {/* Stats */}
                 <div className="grid grid-cols-3 gap-4 mb-4">
                   <div className="text-center">
-                    <Users className="w-4 h-4 text-gray-400 mx-auto mb-1" />
+                    <FiUsers className="w-4 h-4 text-gray-400 mx-auto mb-1" />
                     <p className="text-sm font-medium text-gray-800">{tool.users}</p>
                     <p className="text-xs text-gray-500">Users</p>
                   </div>
                   <div className="text-center">
-                    <TrendingUp className="w-4 h-4 text-green-500 mx-auto mb-1" />
+                    <FiTrendingUp className="w-4 h-4 text-green-500 mx-auto mb-1" />
                     <p className="text-sm font-medium text-gray-800">+{tool.growth}%</p>
                     <p className="text-xs text-gray-500">Growth</p>
                   </div>
                   <div className="text-center">
-                    <DollarSign className="w-4 h-4 text-blue-500 mx-auto mb-1" />
+                    <FiDollarSign className="w-4 h-4 text-blue-500 mx-auto mb-1" />
                     <p className="text-sm font-medium text-gray-800">{tool.pricing}</p>
                     <p className="text-xs text-gray-500">Pricing</p>
                   </div>
@@ -345,7 +345,7 @@ const PersonalizedDashboard: React.FC<PersonalizedDashboardProps> = ({ userProfi
                 {/* Action Button */}
                 <button className="w-full bg-gradient-to-r from-purple-500 to-blue-500 text-white font-semibold py-3 px-4 rounded-xl hover:from-purple-600 hover:to-blue-600 transition-all group-hover:shadow-lg flex items-center justify-center">
                   <span>Try {tool.name}</span>
-                  <ExternalLink className="w-4 h-4 ml-2" />
+                  <FiExternalLink className="w-4 h-4 ml-2" />
                 </button>
               </div>
             </div>
@@ -354,7 +354,7 @@ const PersonalizedDashboard: React.FC<PersonalizedDashboardProps> = ({ userProfi
 
         {/* Call to Action */}
         <div className="mt-12 text-center bg-white rounded-2xl shadow-lg p-8">
-          <Sparkles className="w-16 h-16 text-purple-500 mx-auto mb-4" />
+          <IoSparkles className="w-16 h-16 text-purple-500 mx-auto mb-4" />
           <h2 className="text-2xl font-bold text-gray-800 mb-4">
             Want to discover more AI tools?
           </h2>
@@ -366,7 +366,7 @@ const PersonalizedDashboard: React.FC<PersonalizedDashboardProps> = ({ userProfi
             className="bg-gradient-to-r from-purple-500 to-blue-500 text-white font-semibold py-4 px-8 rounded-xl hover:from-purple-600 hover:to-blue-600 transition-all shadow-lg hover:shadow-xl flex items-center mx-auto"
           >
             <span>Explore Full AIMarketCap</span>
-            <ArrowRight className="w-5 h-5 ml-2" />
+            <FiArrowRight className="w-5 h-5 ml-2" />
           </button>
         </div>
       </div>

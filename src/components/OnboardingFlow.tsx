@@ -1,26 +1,32 @@
 import React, { useState } from 'react';
 import TypeWriterEffect from 'react-typewriter-effect';
 import { 
-  Brain, 
-  Target, 
-  User, 
-  Sparkles, 
-  ArrowRight, 
-  ChevronLeft,
-  X,
-  Zap,
-  PenTool,
-  Cog,
-  TrendingUp,
-  Code,
-  Megaphone,
-  Palette,
-  GraduationCap,
-  Building,
-  DollarSign,
-  Star,
-  Play
-} from 'lucide-react';
+  HiBrain 
+} from 'react-icons/hi';
+import { 
+  FiTarget, 
+  FiUser, 
+  FiArrowRight, 
+  FiChevronLeft,
+  FiX,
+  FiZap,
+  FiTrendingUp,
+  FiCode,
+  FiDollarSign,
+  FiStar,
+  FiPlay
+} from 'react-icons/fi';
+import {
+  BiPen,
+  BiCog,
+  BiMegaphone,
+  BiPalette,
+  BiBuilding
+} from 'react-icons/bi';
+import {
+  IoSparkles,
+  IoSchool
+} from 'react-icons/io5';
 
 interface OnboardingProps {
   onComplete: (userData: UserProfile) => void;
@@ -103,7 +109,7 @@ const OnboardingFlow: React.FC<OnboardingProps> = ({ onComplete, onSkip }) => {
           <div className={`${stepClass} text-center max-w-2xl mx-auto`}>
             <div className="mb-8">
               <div className="inline-flex items-center justify-center w-20 h-20 bg-gradient-to-br from-purple-500 to-blue-500 rounded-2xl mb-6">
-                <Brain className="w-10 h-10 text-white" />
+                <HiBrain className="w-10 h-10 text-white" />
               </div>
               
               <div className="mb-6">
@@ -164,10 +170,10 @@ const OnboardingFlow: React.FC<OnboardingProps> = ({ onComplete, onSkip }) => {
               
               <div className="space-y-3 mt-8">
                 {[
-                  { id: 'solve-problem', icon: Target, text: "I'm looking for AI tools to solve a specific problem", color: 'purple' },
-                  { id: 'explore-trending', icon: TrendingUp, text: "I want to explore what's trending in AI", color: 'blue' },
-                  { id: 'market-research', icon: Brain, text: "I'm researching the AI tools market", color: 'teal' },
-                  { id: 'browsing', icon: Sparkles, text: "Just browsing and discovering", color: 'pink' }
+                  { id: 'solve-problem', icon: FiTarget, text: "I'm looking for AI tools to solve a specific problem", color: 'purple' },
+                  { id: 'explore-trending', icon: FiTrendingUp, text: "I want to explore what's trending in AI", color: 'blue' },
+                  { id: 'market-research', icon: HiBrain, text: "I'm researching the AI tools market", color: 'teal' },
+                  { id: 'browsing', icon: IoSparkles, text: "Just browsing and discovering", color: 'pink' }
                 ].map((option, index) => (
                   <div
                     key={option.id}
@@ -205,7 +211,7 @@ const OnboardingFlow: React.FC<OnboardingProps> = ({ onComplete, onSkip }) => {
         return (
           <div className={`${stepClass} text-center max-w-2xl mx-auto`}>
             <div className="mb-8">
-              <Target className="w-16 h-16 text-purple-500 mx-auto mb-4" />
+              <FiTarget className="w-16 h-16 text-purple-500 mx-auto mb-4" />
               
               <div className="mb-4">
                 <TypeWriterEffect
@@ -242,12 +248,12 @@ const OnboardingFlow: React.FC<OnboardingProps> = ({ onComplete, onSkip }) => {
             
             <div className={`transition-all duration-1000 ${showOptions ? 'opacity-100 transform translate-y-0' : 'opacity-0 transform translate-y-8'} grid grid-cols-1 md:grid-cols-2 gap-4`}>
               {[
-                { id: 'content-creation', icon: PenTool, text: "Creating content faster", desc: "Writing, design, video" },
-                { id: 'automation', icon: Cog, text: "Automating repetitive tasks", desc: "Workflows, processes" },
-                { id: 'productivity', icon: Zap, text: "Improving productivity", desc: "Time management, efficiency" },
-                { id: 'building', icon: Code, text: "Building something new", desc: "Apps, websites, products" },
-                { id: 'marketing', icon: Megaphone, text: "Growing my business", desc: "Marketing, sales, analytics" },
-                { id: 'learning', icon: GraduationCap, text: "Learning and research", desc: "Education, analysis" }
+                { id: 'content-creation', icon: BiPen, text: "Creating content faster", desc: "Writing, design, video" },
+                { id: 'automation', icon: BiCog, text: "Automating repetitive tasks", desc: "Workflows, processes" },
+                { id: 'productivity', icon: FiZap, text: "Improving productivity", desc: "Time management, efficiency" },
+                { id: 'building', icon: FiCode, text: "Building something new", desc: "Apps, websites, products" },
+                { id: 'marketing', icon: BiMegaphone, text: "Growing my business", desc: "Marketing, sales, analytics" },
+                { id: 'learning', icon: IoSchool, text: "Learning and research", desc: "Education, analysis" }
               ].map((challenge, index) => (
                 <div
                   key={challenge.id}
@@ -283,7 +289,7 @@ const OnboardingFlow: React.FC<OnboardingProps> = ({ onComplete, onSkip }) => {
         return (
           <div className={`${stepClass} text-center max-w-2xl mx-auto`}>
             <div className="mb-8">
-              <User className="w-16 h-16 text-blue-500 mx-auto mb-4" />
+              <FiUser className="w-16 h-16 text-blue-500 mx-auto mb-4" />
               
               <div className="mb-4">
                 <TypeWriterEffect
@@ -323,14 +329,14 @@ const OnboardingFlow: React.FC<OnboardingProps> = ({ onComplete, onSkip }) => {
                 <h3 className="text-lg font-semibold text-gray-700 mb-3">What's your role?</h3>
                 <div className="grid grid-cols-2 md:grid-cols-4 gap-3">
                   {[
-                    { id: 'developer', icon: Code, text: "Developer" },
-                    { id: 'marketer', icon: Megaphone, text: "Marketer" },
-                    { id: 'designer', icon: Palette, text: "Designer" },
-                    { id: 'student', icon: GraduationCap, text: "Student" },
-                    { id: 'entrepreneur', icon: Building, text: "Entrepreneur" },
-                    { id: 'freelancer', icon: User, text: "Freelancer" },
-                    { id: 'researcher', icon: Brain, text: "Researcher" },
-                    { id: 'other', icon: Sparkles, text: "Other" }
+                    { id: 'developer', icon: FiCode, text: "Developer" },
+                    { id: 'marketer', icon: BiMegaphone, text: "Marketer" },
+                    { id: 'designer', icon: BiPalette, text: "Designer" },
+                    { id: 'student', icon: IoSchool, text: "Student" },
+                    { id: 'entrepreneur', icon: BiBuilding, text: "Entrepreneur" },
+                    { id: 'freelancer', icon: FiUser, text: "Freelancer" },
+                    { id: 'researcher', icon: HiBrain, text: "Researcher" },
+                    { id: 'other', icon: IoSparkles, text: "Other" }
                   ].map((role, index) => (
                     <div
                       key={role.id}
@@ -415,7 +421,7 @@ const OnboardingFlow: React.FC<OnboardingProps> = ({ onComplete, onSkip }) => {
         return (
           <div className={`${stepClass} text-center max-w-2xl mx-auto`}>
             <div className="mb-8">
-              <DollarSign className="w-16 h-16 text-teal-500 mx-auto mb-4" />
+              <FiDollarSign className="w-16 h-16 text-teal-500 mx-auto mb-4" />
               
               <div className="mb-4">
                 <TypeWriterEffect
@@ -483,7 +489,7 @@ const OnboardingFlow: React.FC<OnboardingProps> = ({ onComplete, onSkip }) => {
                         <h3 className="font-semibold text-gray-800">{budget.text}</h3>
                         <p className="text-sm text-gray-600">{budget.desc}</p>
                       </div>
-                      <ArrowRight className={`w-5 h-5 text-${budget.color}-500`} />
+                      <FiArrowRight className={`w-5 h-5 text-${budget.color}-500`} />
                     </div>
                   </button>
                 </div>
@@ -496,7 +502,7 @@ const OnboardingFlow: React.FC<OnboardingProps> = ({ onComplete, onSkip }) => {
         return (
           <div className={`${stepClass} text-center max-w-3xl mx-auto`}>
             <div className="mb-8">
-              <Sparkles className="w-16 h-16 text-purple-500 mx-auto mb-4" />
+              <IoSparkles className="w-16 h-16 text-purple-500 mx-auto mb-4" />
               
               <div className="mb-4">
                 <TypeWriterEffect
@@ -577,7 +583,7 @@ const OnboardingFlow: React.FC<OnboardingProps> = ({ onComplete, onSkip }) => {
                     className="w-full bg-gradient-to-r from-purple-500 to-blue-500 text-white font-semibold py-4 px-8 rounded-xl hover:from-purple-600 hover:to-blue-600 transform hover:scale-105 transition-all duration-200 shadow-lg"
                   >
                     <div className="flex items-center justify-center">
-                      <Play className="w-5 h-5 mr-2" />
+                      <FiPlay className="w-5 h-5 mr-2" />
                       Explore Your Personalized Dashboard
                     </div>
                   </button>
@@ -629,7 +635,7 @@ const OnboardingFlow: React.FC<OnboardingProps> = ({ onComplete, onSkip }) => {
               onClick={onSkip}
               className="text-gray-400 hover:text-gray-600 transition-colors"
             >
-              <X className="w-6 h-6" />
+              <FiX className="w-6 h-6" />
             </button>
           </div>
 
@@ -647,7 +653,7 @@ const OnboardingFlow: React.FC<OnboardingProps> = ({ onComplete, onSkip }) => {
                 onClick={prevStep}
                 className="flex items-center px-4 py-2 text-gray-600 hover:text-gray-800 transition-colors"
               >
-                <ChevronLeft className="w-4 h-4 mr-1" />
+                <FiChevronLeft className="w-4 h-4 mr-1" />
                 Back
               </button>
               

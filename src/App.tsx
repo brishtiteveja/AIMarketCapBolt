@@ -1,19 +1,21 @@
 import React, { useState, useEffect } from 'react';
 import { 
-  TrendingUp, 
-  Database, 
-  Eye, 
-  Star, 
-  Globe, 
-  BarChart3, 
-  Zap, 
-  ArrowRight, 
-  ChevronLeft,
-  Play,
-  Brain,
-  Users,
-  Target
-} from 'lucide-react';
+  FiTrendingUp, 
+  FiDatabase, 
+  FiEye, 
+  FiStar, 
+  FiGlobe, 
+  FiBarChart3, 
+  FiZap, 
+  FiArrowRight, 
+  FiChevronLeft,
+  FiPlay,
+  FiUsers,
+  FiTarget
+} from 'react-icons/fi';
+import { 
+  HiBrain 
+} from 'react-icons/hi';
 import OnboardingFlow from './components/OnboardingFlow';
 import PersonalizedDashboard from './components/PersonalizedDashboard';
 
@@ -164,7 +166,7 @@ function App() {
           <div className={`${stepClass} text-center max-w-2xl mx-auto`}>
             <div className="mb-8">
               <div className="inline-flex items-center justify-center w-20 h-20 bg-gradient-to-br from-purple-500 to-blue-500 rounded-2xl mb-6">
-                <Brain className="w-10 h-10 text-white" />
+                <HiBrain className="w-10 h-10 text-white" />
               </div>
               <h1 className="text-5xl font-bold bg-gradient-to-r from-purple-600 to-blue-600 bg-clip-text text-transparent mb-4">
                 AIMarketCap
@@ -175,15 +177,15 @@ function App() {
             </div>
             <div className="grid grid-cols-3 gap-6 mb-8">
               <div className="text-center">
-                <TrendingUp className="w-8 h-8 text-purple-500 mx-auto mb-2" />
+                <FiTrendingUp className="w-8 h-8 text-purple-500 mx-auto mb-2" />
                 <p className="text-sm font-medium text-gray-700">Real-time Rankings</p>
               </div>
               <div className="text-center">
-                <BarChart3 className="w-8 h-8 text-blue-500 mx-auto mb-2" />
+                <FiBarChart3 className="w-8 h-8 text-blue-500 mx-auto mb-2" />
                 <p className="text-sm font-medium text-gray-700">Interactive Analytics</p>
               </div>
               <div className="text-center">
-                <Globe className="w-8 h-8 text-teal-500 mx-auto mb-2" />
+                <FiGlobe className="w-8 h-8 text-teal-500 mx-auto mb-2" />
                 <p className="text-sm font-medium text-gray-700">Global Traffic Data</p>
               </div>
             </div>
@@ -194,7 +196,7 @@ function App() {
         return (
           <div className={`${stepClass} max-w-4xl mx-auto`}>
             <div className="text-center mb-8">
-              <Database className="w-16 h-16 text-purple-500 mx-auto mb-4" />
+              <FiDatabase className="w-16 h-16 text-purple-500 mx-auto mb-4" />
               <h2 className="text-3xl font-bold text-gray-800 mb-4">
                 Comprehensive AI Tools Directory
               </h2>
@@ -239,7 +241,7 @@ function App() {
         return (
           <div className={`${stepClass} max-w-4xl mx-auto`}>
             <div className="text-center mb-8">
-              <Eye className="w-16 h-16 text-blue-500 mx-auto mb-4" />
+              <FiEye className="w-16 h-16 text-blue-500 mx-auto mb-4" />
               <h2 className="text-3xl font-bold text-gray-800 mb-4">
                 Interactive Bubble Visualizations
               </h2>
@@ -252,7 +254,7 @@ function App() {
               <div className="flex items-center justify-between mb-4">
                 <h3 className="text-lg font-semibold text-gray-800">Market Overview</h3>
                 <div className="flex items-center text-sm text-gray-500">
-                  <Play className="w-4 h-4 mr-1" />
+                  <FiPlay className="w-4 h-4 mr-1" />
                   Click bubbles to explore
                 </div>
               </div>
@@ -268,7 +270,7 @@ function App() {
         return (
           <div className={`${stepClass} max-w-4xl mx-auto`}>
             <div className="text-center mb-8">
-              <Star className="w-16 h-16 text-yellow-500 mx-auto mb-4" />
+              <FiStar className="w-16 h-16 text-yellow-500 mx-auto mb-4" />
               <h2 className="text-3xl font-bold text-gray-800 mb-4">
                 Custom Watchlists & Tracking
               </h2>
@@ -304,7 +306,7 @@ function App() {
                 <h3 className="text-lg font-semibold text-gray-800 mb-4">Your Watchlist</h3>
                 {watchlist.length === 0 ? (
                   <div className="text-center py-8 text-gray-500">
-                    <Target className="w-12 h-12 mx-auto mb-2 opacity-50" />
+                    <FiTarget className="w-12 h-12 mx-auto mb-2 opacity-50" />
                     <p>Add tools to start tracking</p>
                   </div>
                 ) : (
@@ -331,7 +333,7 @@ function App() {
         return (
           <div className={`${stepClass} max-w-4xl mx-auto`}>
             <div className="text-center mb-8">
-              <Zap className="w-16 h-16 text-orange-500 mx-auto mb-4" />
+              <FiZap className="w-16 h-16 text-orange-500 mx-auto mb-4" />
               <h2 className="text-3xl font-bold text-gray-800 mb-4">
                 Real-time Analytics & Insights
               </h2>
@@ -342,19 +344,19 @@ function App() {
             
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
               <div className="bg-gradient-to-br from-purple-500 to-purple-600 rounded-xl p-6 text-white">
-                <TrendingUp className="w-8 h-8 mb-4" />
+                <FiTrendingUp className="w-8 h-8 mb-4" />
                 <h3 className="text-2xl font-bold mb-2">10,000+</h3>
                 <p className="text-purple-100">AI tools tracked</p>
               </div>
               
               <div className="bg-gradient-to-br from-blue-500 to-blue-600 rounded-xl p-6 text-white">
-                <Users className="w-8 h-8 mb-4" />
+                <FiUsers className="w-8 h-8 mb-4" />
                 <h3 className="text-2xl font-bold mb-2">500M+</h3>
                 <p className="text-blue-100">Monthly users analyzed</p>
               </div>
               
               <div className="bg-gradient-to-br from-teal-500 to-teal-600 rounded-xl p-6 text-white">
-                <Globe className="w-8 h-8 mb-4" />
+                <FiGlobe className="w-8 h-8 mb-4" />
                 <h3 className="text-2xl font-bold mb-2">24/7</h3>
                 <p className="text-teal-100">Real-time monitoring</p>
               </div>
@@ -378,7 +380,7 @@ function App() {
           <div className={`${stepClass} text-center max-w-2xl mx-auto`}>
             <div className="mb-8">
               <div className="inline-flex items-center justify-center w-20 h-20 bg-gradient-to-br from-green-500 to-teal-500 rounded-2xl mb-6">
-                <ArrowRight className="w-10 h-10 text-white" />
+                <FiArrowRight className="w-10 h-10 text-white" />
               </div>
               <h2 className="text-4xl font-bold text-gray-800 mb-4">
                 Ready to Explore?
@@ -460,7 +462,7 @@ function App() {
                 : 'bg-white text-gray-700 hover:bg-gray-50 shadow-lg hover:shadow-xl'
             }`}
           >
-            <ChevronLeft className="w-5 h-5" />
+            <FiChevronLeft className="w-5 h-5" />
           </button>
           
           <div className="flex space-x-2">
@@ -487,7 +489,7 @@ function App() {
                 : 'bg-purple-500 text-white hover:bg-purple-600 shadow-lg hover:shadow-xl'
             }`}
           >
-            <ArrowRight className="w-5 h-5" />
+            <FiArrowRight className="w-5 h-5" />
           </button>
         </div>
       </div>
